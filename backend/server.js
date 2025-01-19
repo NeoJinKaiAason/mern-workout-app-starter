@@ -6,6 +6,8 @@
 // config() attaches environment variables to process.env
 require("dotenv").config();
 
+//Require cors
+const cors = require("cors");
 // Require express that installed via npm
 const express = require("express");
 // Require mongoose that installed via npm
@@ -15,6 +17,9 @@ const workoutRoutes = require("./routes/workouts");
 
 // Set up the express app
 const app = express();
+
+//Allow requests from all origins (for development only)
+app.use(cors());
 
 // Middleware:
 // any code that executes between us getting a request on the server
