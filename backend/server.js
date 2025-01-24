@@ -5,8 +5,14 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 
+//require cors
+const cors = require("cors");
+
 // express app
-const app = express()
+const app = express();
+
+//Allow requests from all origins (for development only)
+app.use(cors());
 
 // middleware
 app.use(express.json())
